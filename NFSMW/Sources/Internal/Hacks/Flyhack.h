@@ -3,6 +3,14 @@
 
 class Flyhack
 {
+private:
+	uintptr_t lastPositionY;
 public:
-	static void ApplyGravity(uintptr_t flyhackForce);
+	Flyhack()
+	{
+		lastPositionY = 0;
+	}
+
+	void ApplyEffect(uintptr_t flyhackForce);
+	void ResetEffect();
 };

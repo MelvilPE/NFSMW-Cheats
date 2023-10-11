@@ -3,13 +3,19 @@
 
 DWORD WINAPI MainThread(LPVOID param)
 {
+    Flyhack instance = Flyhack();
     while (true)
     {
-        /* This part is for flyhack! */
         int VK_M = 0x4D;
+
+        /* This part is for flyhack! */
         if (GetAsyncKeyState(VK_M))
         {
-            Flyhack::ApplyGravity(0xFFFF);
+            instance.ApplyEffect(0xFFFF);
+        }
+        else
+        {
+            instance.ResetEffect();
         }
 
         Sleep(30);
