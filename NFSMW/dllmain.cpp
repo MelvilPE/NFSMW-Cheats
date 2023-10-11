@@ -3,19 +3,29 @@
 
 DWORD WINAPI MainThread(LPVOID param)
 {
-    Flyhack instance = Flyhack();
+    uintptr_t moduleHandle = reinterpret_cast<uintptr_t>(GetModuleHandle(NULL));
+    uintptr_t* playerPositionY = reinterpret_cast<uintptr_t*>(moduleHandle + 0x5386DC);
+    uintptr_t* startVehiclesAdressY = reinterpret_cast<uintptr_t*>(moduleHandle + 0x53878C);
+
+    Flyhack instance = Flyhack(playerPositionY, startVehiclesAdressY);
     while (true)
     {
-        int VK_M = 0x4D;
-
         /* This part is for flyhack! */
+        uintptr_t globalForce = 0xFFFF;
+        int VK_M = 0x4D;
         if (GetAsyncKeyState(VK_M))
         {
-            instance.ApplyEffect(0xFFFF);
+            instance.ApplyEffectPlayer(globalForce);
         }
         else
         {
             instance.ResetEffect();
+        }
+
+        int VK_L = 0x4C;
+        if (GetAsyncKeyState(VK_L))
+        {
+            instance.ApplyEffectAllOtherVehicles(globalForce);
         }
 
         Sleep(30);
