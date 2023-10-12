@@ -145,7 +145,11 @@
   <ItemGroup>
     <ClInclude Include="framework.h" />
     <ClInclude Include="pch.h" />
-    <ClInclude Include="Sources\Internal\Hacks\Flyhack.h" />
+    <ClInclude Include="Sources\Internal\Hacks\Flyhack\AppliedHooks\VehiclesCollector.h" />
+    <ClInclude Include="Sources\Internal\Hacks\Flyhack\Flyhack.h" />
+    <ClInclude Include="Sources\Internal\Includes.h" />
+    <ClInclude Include="Sources\Internal\Main.h" />
+    <ClInclude Include="Sources\Internal\Modules\Hooks\Hooks.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="dllmain.cpp" />
@@ -155,7 +159,10 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
     </ClCompile>
-    <ClCompile Include="Sources\Internal\Hacks\Flyhack.cpp" />
+    <ClCompile Include="Sources\Internal\Hacks\Flyhack\AppliedHooks\VehiclesCollector.cpp" />
+    <ClCompile Include="Sources\Internal\Hacks\Flyhack\Flyhack.cpp" />
+    <ClCompile Include="Sources\Internal\Main.cpp" />
+    <ClCompile Include="Sources\Internal\Modules\Hooks\Hooks.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
