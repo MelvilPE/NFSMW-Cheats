@@ -1,20 +1,19 @@
 #pragma once
 
 #include "../../Includes.h"
+#include "AppliedHooks/VehiclesCollector.h"
 
 class Flyhack
 {
 public:
-	Flyhack(uintptr_t* playerAdressY, uintptr_t* startVehiclesAdressY)
+	Flyhack(uintptr_t* playerAdressY)
 	{
 		this->playerAdressY = playerAdressY;
-		this->startVehiclesAdressY = startVehiclesAdressY;
 		this->minimumPositionY = 0.1f;
 		this->maximumPositionY = 350.0f;
-
-		/* We find each Y position of cops after 0x80 bytes */
-		this->entityLenght = 0xB0; 
 		this->lastPlayerPositionY = NULL;
+
+		VehiclesCollector::SetHookInitializeVehicles();
 	}
 
 	void ApplyEffect(uintptr_t* targetAdressY, uintptr_t flyhackForce);
@@ -26,9 +25,5 @@ private:
 	float minimumPositionY;
 	float maximumPositionY;
 	uintptr_t* playerAdressY;
-	uintptr_t* startVehiclesAdressY;
-
 	uintptr_t lastPlayerPositionY;
-	uintptr_t entityLenght;
-	std::vector<uintptr_t*> FindAllVehiclesPointersY();
 };

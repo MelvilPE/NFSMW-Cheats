@@ -60,15 +60,14 @@ void VehiclesCollector::SetHookInitializeVehicles()
 
 	if (!IsInitializeVehiclesHooked)
 	{
-		uintptr_t InitializeVehiclesHookAddr = (uintptr_t)GetModuleHandle(NULL);
-		if (!InitializeVehiclesHookAddr)
+		if (!hookAdress)
 		{
 			MessageBox(NULL, "VehiclesCollector::SetHookInitializeVehicles failed to find pattern.", "wotblitz-dlc.dll", 16);
 			return;
 		}
 
-		InitializeVehiclesHookJump = InitializeVehiclesHookAddr + hookLenght;
-		Hooks::Hook((char*)InitializeVehiclesHookAddr, (char*)HookInitializeVehicles, hookLenght);
+		InitializeVehiclesHookJump = hookAdress + hookLenght;
+		Hooks::Hook((char*)hookAdress, (char*)HookInitializeVehicles, hookLenght);
 		IsInitializeVehiclesHooked = true;
 	}
 }

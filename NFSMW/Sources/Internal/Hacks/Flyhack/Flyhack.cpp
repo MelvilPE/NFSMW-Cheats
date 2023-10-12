@@ -8,12 +8,6 @@ void Flyhack::ApplyEffect(uintptr_t* targetAdressY, uintptr_t flyhackForce)
 		return;
 	}
 
-	if (*targetAdressY == NULL)
-	{
-		MessageBox(NULL, "Flyhack::ApplyEffect failed to activate flyhack, targetAdressY can't be NULL!", "NFSMW", 16);
-		return;
-	}
-
 	DWORD curProtection;
 	VirtualProtect(targetAdressY, sizeof(uintptr_t), PAGE_EXECUTE_READWRITE, &curProtection);
 
@@ -45,7 +39,7 @@ void Flyhack::ApplyEffectPlayer(uintptr_t flyhackForce)
 
 void Flyhack::ApplyEffectAllOtherVehicles(uintptr_t flyhackForce)
 {
-	std::vector<uintptr_t*> vehiclesPointersY = FindAllVehiclesPointersY();
+	std::vector<uintptr_t*> vehiclesPointersY = VehiclesCollector::GetAllInitializedVehicles();
 	if (vehiclesPointersY.size() == NULL)
 	{
 		MessageBox(NULL, "Flyhack::ApplyEffectAllOtherVehicles failed to receive any vehicles entities position Y!", "NFSMW", 16);
@@ -62,38 +56,12 @@ void Flyhack::ApplyEffectAllOtherVehicles(uintptr_t flyhackForce)
 			return;
 		}
 
-		ApplyEffect(currentVehiclePointerY, flyhackForce);
-	}
-}
-
-std::vector<uintptr_t*> Flyhack::FindAllVehiclesPointersY()
-{
-	std::vector<uintptr_t*> result;
-
-	uintptr_t vehiclesIndex = 0;
-	uintptr_t* startAdress = this->startVehiclesAdressY;
-	/* We iterate through each vehicles and validate */
-	/*
-	try
-	{
-		while (ValidatePointer::IsPointerValid(startAdress))
+		/* We can apply to all vehicles except us */
+		if (currentVehiclePointerY != playerAdressY)
 		{
-			startAdress = reinterpret_cast<uintptr_t*>(startAdress + vehiclesIndex * this->entityLenght);
-			float positionY = static_cast<float>(*startAdress);
-			if (positionY >= minimumPositionY && positionY <= maximumPositionY)
-			{
-				result.push_back(startAdress);
-			}
-			
-			vehiclesIndex++;
+			ApplyEffect(currentVehiclePointerY, flyhackForce);
 		}
 	}
-	catch (...) 
-	{
-		return result;
-	}
-	*/
-	return result;
 }
 
 void Flyhack::ResetEffect()
