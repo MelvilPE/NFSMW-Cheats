@@ -1,7 +1,7 @@
 #pragma once
 
 #include "../../Includes.h"
-#include "AppliedHooks/VehiclesCollector.h"
+#include "../../AppliedHooks/HooksList/VehiclesCollector.h"
 
 class Flyhack
 {
@@ -12,8 +12,6 @@ public:
 		this->minimumPositionY = 0.1f;
 		this->maximumPositionY = 350.0f;
 		this->lastPlayerPositionY = NULL;
-
-		VehiclesCollector::SetHookInitializeVehicles();
 	}
 
 	void ApplyEffect(uintptr_t* targetAdressY, uintptr_t flyhackForce);

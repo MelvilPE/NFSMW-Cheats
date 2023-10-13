@@ -2,6 +2,8 @@
 
 void Main::Run()
 {
+    AppliedHooksRegistrator::ApplyRegisteredHooks();
+
     uintptr_t moduleHandle = reinterpret_cast<uintptr_t>(GetModuleHandle(NULL));
     uintptr_t* playerPositionY = reinterpret_cast<uintptr_t*>(moduleHandle + 0x5386DC);
 

@@ -1,6 +1,6 @@
 #pragma once
-#include "../../../Includes.h"
-#include "../../../Modules/Hooks/Hooks.h"
+#include "../../Includes.h"
+#include "../../Modules/Hooks/Hooks.h"
 
 class VehiclesCollector 
 {

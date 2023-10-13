@@ -31,8 +31,11 @@
     <Filter Include="Fichiers sources\Sources\Internal\Hacks\Flyhack">
       <UniqueIdentifier>{273e6bc4-d146-4277-9907-870ef1263cbd}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Fichiers sources\Sources\Internal\Hacks\Flyhack\AppliedHooks">
-      <UniqueIdentifier>{8ac5ebc1-6209-4edd-ab8a-e8aa3c455571}</UniqueIdentifier>
+    <Filter Include="Fichiers sources\Sources\Internal\AppliedHooks">
+      <UniqueIdentifier>{8bac1ee0-3a08-48d5-8166-905d952e6d58}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Fichiers sources\Sources\Internal\AppliedHooks\HooksList">
+      <UniqueIdentifier>{572031aa-bcdf-437a-bf20-5d102c19d86a}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -48,14 +51,17 @@
     <ClInclude Include="Sources\Internal\Hacks\Flyhack\Flyhack.h">
       <Filter>Fichiers sources\Sources\Internal\Hacks\Flyhack</Filter>
     </ClInclude>
-    <ClInclude Include="Sources\Internal\Hacks\Flyhack\AppliedHooks\VehiclesCollector.h">
-      <Filter>Fichiers sources\Sources\Internal\Hacks\Flyhack\AppliedHooks</Filter>
-    </ClInclude>
     <ClInclude Include="Sources\Internal\Includes.h">
       <Filter>Fichiers sources\Sources\Internal</Filter>
     </ClInclude>
     <ClInclude Include="Sources\Internal\Main.h">
       <Filter>Fichiers sources\Sources\Internal</Filter>
+    </ClInclude>
+    <ClInclude Include="Sources\Internal\AppliedHooks\HooksList\VehiclesCollector.h">
+      <Filter>Fichiers sources\Sources\Internal\AppliedHooks\HooksList</Filter>
+    </ClInclude>
+    <ClInclude Include="Sources\Internal\AppliedHooks\AppliedHooksRegistrator.h">
+      <Filter>Fichiers sources\Sources\Internal\AppliedHooks</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -71,11 +77,14 @@
     <ClCompile Include="Sources\Internal\Hacks\Flyhack\Flyhack.cpp">
       <Filter>Fichiers sources\Sources\Internal\Hacks\Flyhack</Filter>
     </ClCompile>
-    <ClCompile Include="Sources\Internal\Hacks\Flyhack\AppliedHooks\VehiclesCollector.cpp">
-      <Filter>Fichiers sources\Sources\Internal\Hacks\Flyhack\AppliedHooks</Filter>
-    </ClCompile>
     <ClCompile Include="Sources\Internal\Main.cpp">
       <Filter>Fichiers sources\Sources\Internal</Filter>
+    </ClCompile>
+    <ClCompile Include="Sources\Internal\AppliedHooks\HooksList\VehiclesCollector.cpp">
+      <Filter>Fichiers sources\Sources\Internal\AppliedHooks\HooksList</Filter>
+    </ClCompile>
+    <ClCompile Include="Sources\Internal\AppliedHooks\AppliedHooksRegistrator.cpp">
+      <Filter>Fichiers sources\Sources\Internal\AppliedHooks</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
