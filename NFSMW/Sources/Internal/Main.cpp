@@ -7,27 +7,31 @@ void Main::Run()
     uintptr_t moduleHandle = reinterpret_cast<uintptr_t>(GetModuleHandle(NULL));
     uintptr_t* playerPositionY = reinterpret_cast<uintptr_t*>(moduleHandle + 0x5386DC);
 
-    Flyhack instance = Flyhack(playerPositionY);
+    Flyhack flyhack = Flyhack(playerPositionY);
     while (true)
     {
-        /* This part is for flyhack! */
-        uintptr_t globalForce = 0xFFFF;
-        int VK_M = 0x4D;
-        if (GetAsyncKeyState(VK_M))
-        {
-            instance.ApplyEffectPlayer(globalForce);
-        }
-        else
-        {
-            instance.ResetEffect();
-        }
-
-        int VK_L = 0x4C;
-        if (GetAsyncKeyState(VK_L))
-        {
-            instance.ApplyEffectAllOtherVehicles(globalForce);
-        }
+        FlyhackBlock(&flyhack);
 
         Sleep(30);
+    }
+}
+
+void Main::FlyhackBlock(Flyhack* flyhack)
+{
+    uintptr_t flyhackForce = 0xFFFF;
+    int VK_M = 0x4D;
+    if (GetAsyncKeyState(VK_M))
+    {
+        flyhack->ApplyEffectPlayer(flyhackForce);
+    }
+    else
+    {
+        flyhack->ResetEffect();
+    }
+
+    int VK_L = 0x4C;
+    if (GetAsyncKeyState(VK_L))
+    {
+        flyhack->ApplyEffectAllOtherVehicles(flyhackForce);
     }
 }

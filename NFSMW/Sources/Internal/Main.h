@@ -8,4 +8,5 @@ class Main
 {
 public:
 	static void Run();
+	static void FlyhackBlock(Flyhack* flyhack);
 };
