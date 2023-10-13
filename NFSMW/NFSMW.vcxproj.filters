@@ -37,6 +37,12 @@
     <Filter Include="Fichiers sources\Sources\Internal\AppliedHooks\HooksList">
       <UniqueIdentifier>{572031aa-bcdf-437a-bf20-5d102c19d86a}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Fichiers sources\Sources\Internal\Classes">
+      <UniqueIdentifier>{264119ed-941a-4828-9071-53c6fe967baa}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Fichiers sources\Sources\Internal\Classes\Math">
+      <UniqueIdentifier>{b31d0e70-d0ba-4867-b415-23ae229bda36}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="framework.h">
@@ -63,6 +69,9 @@
     <ClInclude Include="Sources\Internal\AppliedHooks\AppliedHooksRegistrator.h">
       <Filter>Fichiers sources\Sources\Internal\AppliedHooks</Filter>
     </ClInclude>
+    <ClInclude Include="Sources\Internal\Classes\Math\Vector3.h">
+      <Filter>Fichiers sources\Sources\Internal\Classes\Math</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="dllmain.cpp">
@@ -85,6 +94,9 @@
     </ClCompile>
     <ClCompile Include="Sources\Internal\AppliedHooks\AppliedHooksRegistrator.cpp">
       <Filter>Fichiers sources\Sources\Internal\AppliedHooks</Filter>
+    </ClCompile>
+    <ClCompile Include="Sources\Internal\Classes\Math\Vector3.cpp">
+      <Filter>Fichiers sources\Sources\Internal\Classes\Math</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

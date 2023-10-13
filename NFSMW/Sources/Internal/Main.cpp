@@ -4,10 +4,7 @@ void Main::Run()
 {
     AppliedHooksRegistrator::ApplyRegisteredHooks();
 
-    uintptr_t moduleHandle = reinterpret_cast<uintptr_t>(GetModuleHandle(NULL));
-    uintptr_t* playerPositionY = reinterpret_cast<uintptr_t*>(moduleHandle + 0x5386DC);
-
-    Flyhack flyhack = Flyhack(playerPositionY);
+    Flyhack flyhack = Flyhack();
     while (true)
     {
         FlyhackBlock(&flyhack);
@@ -18,7 +15,7 @@ void Main::Run()
 
 void Main::FlyhackBlock(Flyhack* flyhack)
 {
-    uintptr_t flyhackForce = 0xFFFF;
+    float flyhackForce = 2.5f;
     int VK_M = 0x4D;
     if (GetAsyncKeyState(VK_M))
     {

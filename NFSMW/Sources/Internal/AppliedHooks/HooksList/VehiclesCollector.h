@@ -1,10 +1,11 @@
 #pragma once
 #include "../../Includes.h"
+#include "../../Classes/Math/Vector3.h"
 #include "../../Modules/Hooks/Hooks.h"
 
 class VehiclesCollector 
 {
 public:
-	static void SetHookInitializeVehicles();
-	static std::vector<uintptr_t*> GetAllInitializedVehicles();
+	static void SetHookInitializeVehiclesPosition();
+	static std::vector<Vector3*> GetAllInitializedVehiclesPosition();
 };

@@ -1,35 +1,34 @@
 #include "VehiclesCollector.h"
 
-bool IsInitializeVehiclesHooked = false;
-uintptr_t InitializeVehiclesHookJump = NULL;
+bool IsInitializeVehiclesPositionHooked = false;
+uintptr_t InitializeVehiclesPositionHookJump = NULL;
 
-std::vector<uintptr_t*> initializedVehicles;
-uintptr_t* currentInitializedVehicle = nullptr;
+std::vector<Vector3*> initializedVehiclesPosition;
+Vector3* currentInitializedVehiclePosition = nullptr;
 
-/* Short function to add a Y position address retrieved from the hook
+/* Short function to add a position address retrieved from the hook
  * Check if it is not nullptr and already present in the list
  */
-void PushInitializedVehicle()
+void PushInitializedVehiclePosition()
 {
-	if (currentInitializedVehicle == nullptr)
+	if (currentInitializedVehiclePosition == nullptr)
 		return;
 
-	auto it = std::find(initializedVehicles.begin(), initializedVehicles.end(), currentInitializedVehicle);
-	if (it == initializedVehicles.end())
+	auto it = std::find(initializedVehiclesPosition.begin(), initializedVehiclesPosition.end(), currentInitializedVehiclePosition);
+	if (it == initializedVehiclesPosition.end())
 	{
-		initializedVehicles.push_back(currentInitializedVehicle);
+		initializedVehiclesPosition.push_back(currentInitializedVehiclePosition);
 	}
 }
 
-void __declspec(naked) HookInitializeVehicles()
+void __declspec(naked) HookInitializeVehiclesPosition()
 {
-	/* Get the address of position Y */
+	/* Get the address of entity position */
 	_asm
 	{
 		push ebx
 		mov ebx, ecx
-		add ebx, 0x04
-		mov currentInitializedVehicle, ebx
+		mov currentInitializedVehiclePosition, ebx
 		pop ebx
 	}
 	/* Prepare registers for function call */
@@ -38,7 +37,7 @@ void __declspec(naked) HookInitializeVehicles()
 		pushad
 		pushfd
 	}
-	PushInitializedVehicle();
+	PushInitializedVehiclePosition();
 	_asm
 	{
 		popfd
@@ -49,30 +48,30 @@ void __declspec(naked) HookInitializeVehicles()
 	{
 		mov[ecx + 0x04], eax
 		mov edx, [edx + 0x08]
-		jmp[InitializeVehiclesHookJump]
+		jmp[InitializeVehiclesPositionHookJump]
 	}
 }
 
-void VehiclesCollector::SetHookInitializeVehicles()
+void VehiclesCollector::SetHookInitializeVehiclesPosition()
 {
 	uintptr_t hookAdress = reinterpret_cast<uintptr_t>(GetModuleHandle(NULL)) + 0x2A6FFF;
 	uintptr_t hookLenght = 6;
 
-	if (!IsInitializeVehiclesHooked)
+	if (!IsInitializeVehiclesPositionHooked)
 	{
 		if (!hookAdress)
 		{
-			MessageBox(NULL, "VehiclesCollector::SetHookInitializeVehicles failed to find pattern.", "wotblitz-dlc.dll", 16);
+			MessageBox(NULL, "VehiclesCollector::SetHookInitializeVehiclesPosition failed to find pattern.", "NFSMW", 16);
 			return;
 		}
 
-		InitializeVehiclesHookJump = hookAdress + hookLenght;
-		Hooks::Hook((char*)hookAdress, (char*)HookInitializeVehicles, hookLenght);
-		IsInitializeVehiclesHooked = true;
+		InitializeVehiclesPositionHookJump = hookAdress + hookLenght;
+		Hooks::Hook((char*)hookAdress, (char*)HookInitializeVehiclesPosition, hookLenght);
+		IsInitializeVehiclesPositionHooked = true;
 	}
 }
 
-std::vector<uintptr_t*> VehiclesCollector::GetAllInitializedVehicles()
+std::vector<Vector3*> VehiclesCollector::GetAllInitializedVehiclesPosition()
 {
-	return initializedVehicles;
+	return initializedVehiclesPosition;
 }
