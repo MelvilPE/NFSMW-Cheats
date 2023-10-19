@@ -1,66 +1,69 @@
 #include "Flyhack.h"
 
-void Flyhack::ApplyEffect(Vector3* targetPosition, float flyhackForce)
+void Flyhack::ApplyEffect(VehicleEntity* targetEntity, float flyhackForce)
 {
-	if (targetPosition == nullptr)
+	if (targetEntity == nullptr)
 	{
-		MessageBox(NULL, "Flyhack::ApplyEffect failed to activate flyhack, targetPosition pointer can't be nullptr!", "NFSMW", 16);
+		MessageBox(NULL, "Flyhack::ApplyEffect failed to activate flyhack, targetEntity pointer can't be nullptr!", "NFSMW", 16);
 		return;
 	}
 
 	DWORD curProtection;
-	VirtualProtect(targetPosition, sizeof(Vector3), PAGE_EXECUTE_READWRITE, &curProtection);
+	VirtualProtect(targetEntity, sizeof(VehicleEntity), PAGE_EXECUTE_READWRITE, &curProtection);
 
-	targetPosition->SetAxisY(targetPosition->GetAxisY() + flyhackForce);
+	Vector3 targetPosition = targetEntity->GetPosition();
+	targetPosition.SetAxisY(targetPosition.GetAxisY() + flyhackForce);
+	targetEntity->SetPosition(targetPosition);
 
 	DWORD temp;
-	VirtualProtect(targetPosition, sizeof(Vector3), curProtection, &temp);
+	VirtualProtect(targetEntity, sizeof(VehicleEntity), curProtection, &temp);
 }
 
 void Flyhack::ApplyEffectPlayer(float flyhackForce)
 {
-	if (playerPosition == nullptr)
+	if (playerEntity == nullptr)
 	{
-		MessageBox(NULL, "Flyhack::ApplyEffectPlayer failed to activate flyhack, playerPosition pointer can't be nullptr!", "NFSMW", 16);
+		MessageBox(NULL, "Flyhack::ApplyEffectPlayer failed to activate flyhack, playerEntity pointer can't be nullptr!", "NFSMW", 16);
 		return;
 	}
 
-	ApplyEffect(playerPosition, flyhackForce);
+
+	ApplyEffect(playerEntity, flyhackForce);
 
 	/* When we need to add more force to beat gravity! */
-	while (playerPosition->GetAxisY() <= lastPlayerPositionY)
+	while (playerEntity->GetPosition().GetAxisY() <= lastPlayerPositionY)
 	{
 		//flyhackForce = flyhackForce - flyhackForce / 2;
 		flyhackForce += flyhackForce;
-		ApplyEffect(playerPosition, flyhackForce);
+		ApplyEffect(playerEntity, flyhackForce);
 	}
 	/* We beat the gravity force here! */
-	lastPlayerPositionY = playerPosition->GetAxisY();
+	lastPlayerPositionY = playerEntity->GetPosition().GetAxisY();
 }
 
 void Flyhack::ApplyEffectAllOtherVehicles(float flyhackForce)
 {
-	std::vector<Vector3*> allVehiclesPosition = VehiclesCollector::GetAllInitializedVehiclesPosition();
-	if (allVehiclesPosition.size() == NULL)
+	std::vector<VehicleEntity*> allVehiclesEntities = VehiclesCollector::GetAllVehiclesEntities();
+	if (allVehiclesEntities.size() == NULL)
 	{
 		MessageBox(NULL, "Flyhack::ApplyEffectAllOtherVehicles failed to receive any vehicles entities position!", "NFSMW", 16);
 		return;
 	}
 
 	/* We want to apply force to each vehicles in the received vector */
-	for (uintptr_t vehiclesIndex = 0; vehiclesIndex < allVehiclesPosition.size(); vehiclesIndex++)
+	for (uintptr_t vehicleIndex = 0; vehicleIndex < allVehiclesEntities.size(); vehicleIndex++)
 	{
-		Vector3* currentVehiclePosition = allVehiclesPosition[vehiclesIndex];
-		if (currentVehiclePosition == nullptr)
+		VehicleEntity* currentVehicleEntity = allVehiclesEntities[vehicleIndex];
+		if (currentVehicleEntity == nullptr)
 		{
-			MessageBox(NULL, "Flyhack::ApplyEffectAllOtherVehicles failed to activate flyhack, currentVehiclePosition pointer can't be nullptr!", "NFSMW", 16);
+			MessageBox(NULL, "Flyhack::ApplyEffectAllOtherVehicles failed to activate flyhack, currentVehicleEntity pointer can't be nullptr!", "NFSMW", 16);
 			return;
 		}
 
 		/* We can apply to all vehicles except us */
-		if (currentVehiclePosition != playerPosition)
+		if (currentVehicleEntity != playerEntity)
 		{
-			ApplyEffect(currentVehiclePosition, flyhackForce);
+			ApplyEffect(currentVehicleEntity, flyhackForce);
 		}
 	}
 }

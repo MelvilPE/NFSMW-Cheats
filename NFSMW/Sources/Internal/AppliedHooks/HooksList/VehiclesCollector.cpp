@@ -1,35 +1,32 @@
 #include "VehiclesCollector.h"
 
-bool IsInitializeVehiclesPositionHooked = false;
-uintptr_t InitializeVehiclesPositionHookJump = NULL;
+bool IsCreateVehicleEntityHooked = false;
+uintptr_t CreateVehicleEntityHookJump = NULL;
 
-std::vector<Vector3*> initializedVehiclesPosition;
-Vector3* currentInitializedVehiclePosition = nullptr;
+std::vector<VehicleEntity*> createdVehiclesEntities;
+VehicleEntity* currentVehicleEntity = nullptr;
 
-/* Short function to add a position address retrieved from the hook
+/* Short function to add a vehicle entity address retrieved from the hook
  * Check if it is not nullptr and already present in the list
  */
-void PushInitializedVehiclePosition()
+void PushCreatedVehicleEntity()
 {
-	if (currentInitializedVehiclePosition == nullptr)
+	if (currentVehicleEntity == nullptr)
 		return;
 
-	auto it = std::find(initializedVehiclesPosition.begin(), initializedVehiclesPosition.end(), currentInitializedVehiclePosition);
-	if (it == initializedVehiclesPosition.end())
+	auto it = std::find(createdVehiclesEntities.begin(), createdVehiclesEntities.end(), currentVehicleEntity);
+	if (it == createdVehiclesEntities.end())
 	{
-		initializedVehiclesPosition.push_back(currentInitializedVehiclePosition);
+		createdVehiclesEntities.push_back(currentVehicleEntity);
 	}
 }
 
-void __declspec(naked) HookInitializeVehiclesPosition()
+void __declspec(naked) HookCreateVehicleEntity()
 {
-	/* Get the address of entity position */
+	/* Get the address of vehicle entity */
 	_asm
 	{
-		push ebx
-		mov ebx, ecx
-		mov currentInitializedVehiclePosition, ebx
-		pop ebx
+		mov currentVehicleEntity, edx
 	}
 	/* Prepare registers for function call */
 	_asm
@@ -37,7 +34,7 @@ void __declspec(naked) HookInitializeVehiclesPosition()
 		pushad
 		pushfd
 	}
-	PushInitializedVehiclePosition();
+	PushCreatedVehicleEntity();
 	_asm
 	{
 		popfd
@@ -46,32 +43,32 @@ void __declspec(naked) HookInitializeVehiclesPosition()
 	/* Execution of overwritten instructions and normal execution */
 	_asm
 	{
-		mov[ecx + 0x04], eax
-		mov edx, [edx + 0x08]
-		jmp[InitializeVehiclesPositionHookJump]
+		mov eax, dword ptr[ebp + 0x34]
+		push 0
+		jmp[CreateVehicleEntityHookJump]
 	}
 }
 
-void VehiclesCollector::SetHookInitializeVehiclesPosition()
+void VehiclesCollector::SetHookCreateVehicleEntity()
 {
-	uintptr_t hookAdress = reinterpret_cast<uintptr_t>(GetModuleHandle(NULL)) + 0x2A6FFF;
-	uintptr_t hookLenght = 6;
+	uintptr_t hookAdress = reinterpret_cast<uintptr_t>(GetModuleHandle(NULL)) + 0x2B5B0F;
+	uintptr_t hookLenght = 5;
 
-	if (!IsInitializeVehiclesPositionHooked)
+	if (!IsCreateVehicleEntityHooked)
 	{
 		if (!hookAdress)
 		{
-			MessageBox(NULL, "VehiclesCollector::SetHookInitializeVehiclesPosition failed to find pattern.", "NFSMW", 16);
+			MessageBox(NULL, "VehiclesCollector::SetHookCreateVehicleEntity failed to deduce function hooking adress.", "NFSMW", 16);
 			return;
 		}
 
-		InitializeVehiclesPositionHookJump = hookAdress + hookLenght;
-		Hooks::Hook((char*)hookAdress, (char*)HookInitializeVehiclesPosition, hookLenght);
-		IsInitializeVehiclesPositionHooked = true;
+		CreateVehicleEntityHookJump = hookAdress + hookLenght;
+		Hooks::Hook((char*)hookAdress, (char*)HookCreateVehicleEntity, hookLenght);
+		IsCreateVehicleEntityHooked = true;
 	}
 }
 
-std::vector<Vector3*> VehiclesCollector::GetAllInitializedVehiclesPosition()
+std::vector<VehicleEntity*> VehiclesCollector::GetAllVehiclesEntities()
 {
-	return initializedVehiclesPosition;
+	return createdVehiclesEntities;
 }

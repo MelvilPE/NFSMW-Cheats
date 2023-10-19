@@ -1,26 +1,26 @@
 #include "Teleport.h"
 
-void Teleport::TeleportLocation(Vector3* targetPosition, Vector3* targetLocation)
+void Teleport::TeleportLocation(VehicleEntity* targetEntity, Vector3* targetLocation)
 {
-	if (targetPosition == nullptr)
+	if (targetEntity == nullptr)
 	{
-		MessageBox(NULL, "Teleport::TeleportLocation failed to teleport, targetPosition pointer can't be nullptr!", "NFSMW", 16);
+		MessageBox(NULL, "Teleport::TeleportLocation failed to teleport, targetEntity pointer can't be nullptr!", "NFSMW", 16);
 		return;
 	}
 
 	DWORD curProtection;
-	VirtualProtect(targetPosition, sizeof(Vector3), PAGE_EXECUTE_READWRITE, &curProtection);
+	VirtualProtect(targetEntity, sizeof(VehicleEntity), PAGE_EXECUTE_READWRITE, &curProtection);
 
-	targetPosition->SetAxisXYZ(*targetLocation);
+	targetEntity->SetPosition(*targetLocation);
 
 	DWORD temp;
-	VirtualProtect(targetPosition, sizeof(Vector3), curProtection, &temp);
+	VirtualProtect(targetEntity, sizeof(VehicleEntity), curProtection, &temp);
 }
 
-void Teleport::TeleportHighestLocation(Vector3* targetPosition)
+void Teleport::TeleportHighestLocation(VehicleEntity* targetEntity)
 {
-	std::vector<Vector3*> allVehiclesPosition = VehiclesCollector::GetAllInitializedVehiclesPosition();
-	if (allVehiclesPosition.size() == NULL)
+	std::vector<VehicleEntity*> allVehiclesEntities = VehiclesCollector::GetAllVehiclesEntities();
+	if (allVehiclesEntities.size() == NULL)
 	{
 		MessageBox(NULL, "Teleport::TeleportHelicopter failed to receive any vehicles entities position!", "NFSMW", 16);
 		return;
@@ -28,32 +28,32 @@ void Teleport::TeleportHighestLocation(Vector3* targetPosition)
 
 	/* We want to find the highest vehicle, which in most cases is the helicopter */
 	Vector3 highestVehiclePosition = Vector3(0.0f, 0.0f, 0.0f);
-	for (uintptr_t vehiclesIndex = 0; vehiclesIndex < allVehiclesPosition.size(); vehiclesIndex++)
+	for (uintptr_t vehicleIndex = 0; vehicleIndex < allVehiclesEntities.size(); vehicleIndex++)
 	{
-		Vector3* currentVehiclePosition = allVehiclesPosition[vehiclesIndex];
-		if (currentVehiclePosition == nullptr)
+		VehicleEntity* currentVehicleEntity = allVehiclesEntities[vehicleIndex];
+		if (currentVehicleEntity == nullptr)
 		{
-			MessageBox(NULL, "Teleport::TeleportHelicopter failed to teleport on helicopter, currentVehiclePosition pointer can't be nullptr!", "NFSMW", 16);
+			MessageBox(NULL, "Teleport::TeleportHelicopter failed to teleport on helicopter, currentVehicleEntity pointer can't be nullptr!", "NFSMW", 16);
 			return;
 		}
 
 		/* We check there each vehicle and get the highest position */
-		if (currentVehiclePosition != playerPosition)
-			if (highestVehiclePosition.GetAxisY() < currentVehiclePosition->GetAxisY())
-				highestVehiclePosition = *currentVehiclePosition;
+		if (currentVehicleEntity != playerEntity)
+			if (highestVehiclePosition.GetAxisY() < currentVehicleEntity->GetPosition().GetAxisY())
+				highestVehiclePosition = currentVehicleEntity->GetPosition();
 	}
 
-	if (highestVehiclePosition.IsSameLocation(0.0f, 0.0f, 0.0f))
+	if (highestVehiclePosition.HasSameValues(0.0f, 0.0f, 0.0f))
 	{
 		MessageBox(NULL, "Teleport::TeleportHelicopter failed to teleport on helicopter, failed to receive highest entity position!", "NFSMW", 16);
 		return;
 	}
 
 	highestVehiclePosition.SetAxisY(highestVehiclePosition.GetAxisY() + 2.5f);
-	TeleportLocation(targetPosition, &highestVehiclePosition);
+	TeleportLocation(targetEntity, &highestVehiclePosition);
 }
 
 void Teleport::TeleportPlayerToHighestLocation()
 {
-	TeleportHighestLocation(playerPosition);
+	TeleportHighestLocation(playerEntity);
 }

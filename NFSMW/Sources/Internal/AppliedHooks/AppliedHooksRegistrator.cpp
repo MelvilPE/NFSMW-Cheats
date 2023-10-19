@@ -2,5 +2,5 @@
 
 void AppliedHooksRegistrator::ApplyRegisteredHooks()
 {
-	VehiclesCollector::SetHookInitializeVehiclesPosition();
+	VehiclesCollector::SetHookCreateVehicleEntity();
 }
