@@ -49,6 +49,9 @@
     <Filter Include="Fichiers sources\Sources\Internal\Hacks\GameClasses">
       <UniqueIdentifier>{2fe23155-c1ec-4f50-b9fc-45704b6fd4c5}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Fichiers sources\Sources\Internal\Hacks\AntiKB">
+      <UniqueIdentifier>{a8f77aaf-455f-4eea-a8ea-fbfa275e835b}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="framework.h">
@@ -93,6 +96,9 @@
     <ClInclude Include="Sources\Internal\Hacks\GameClasses\VehicleEntity.h">
       <Filter>Fichiers sources\Sources\Internal\Hacks\GameClasses</Filter>
     </ClInclude>
+    <ClInclude Include="Sources\Internal\Hacks\AntiKB\AntiKB.h">
+      <Filter>Fichiers sources\Sources\Internal\Hacks\AntiKB</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="dllmain.cpp">
@@ -133,6 +139,9 @@
     </ClCompile>
     <ClCompile Include="Sources\Internal\Hacks\GameClasses\VehicleEntity.cpp">
       <Filter>Fichiers sources\Sources\Internal\Hacks\GameClasses</Filter>
+    </ClCompile>
+    <ClCompile Include="Sources\Internal\Hacks\AntiKB\AntiKB.cpp">
+      <Filter>Fichiers sources\Sources\Internal\Hacks\AntiKB</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

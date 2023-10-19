@@ -6,10 +6,12 @@ void Main::Run()
 
     Flyhack flyhack = Flyhack();
     Teleport teleport = Teleport();
+    AntiKB antiKB = AntiKB();
     while (true)
     {
         FlyhackBlock(&flyhack);
         TeleportBlock(&teleport);
+        AntiKBBlock(&antiKB);
 
         Sleep(30);
     }
@@ -41,5 +43,14 @@ void Main::TeleportBlock(Teleport* teleport)
     if (GetAsyncKeyState(VK_K))
     {
         teleport->TeleportPlayerToHighestLocation();
+    }
+}
+
+void Main::AntiKBBlock(AntiKB* antiKB)
+{
+    int VK_J = 0x4A;
+    if (GetAsyncKeyState(VK_J))
+    {
+        antiKB->EnableOrDisable();
     }
 }
