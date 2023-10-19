@@ -29,6 +29,10 @@ public:
 	void SetAxisX(float x);
 	void SetAxisY(float y);
 	void SetAxisZ(float z);
+	void SetAxisXYZ(float x, float y, float z);
+	void SetAxisXYZ(Vector3 xyz);
+
+	bool IsSameLocation(float x, float y, float z);
 private:
 	float x;
 	float y;
