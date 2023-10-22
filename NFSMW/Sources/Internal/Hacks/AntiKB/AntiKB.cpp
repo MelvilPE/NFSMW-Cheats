@@ -2,6 +2,7 @@
 
 void AntiKB::EnableOrDisable()
 {
+	VehicleEntity* playerEntity = GetPlayerEntity();
 	float vehicleWeight = playerEntity->GetWeight();
 
 	enabled = !enabled;

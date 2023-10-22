@@ -152,6 +152,7 @@
     <ClInclude Include="Sources\Internal\Classes\Math\Vector3.h" />
     <ClInclude Include="Sources\Internal\Classes\Math\Vector4.h" />
     <ClInclude Include="Sources\Internal\Hacks\AntiKB\AntiKB.h" />
+    <ClInclude Include="Sources\Internal\Hacks\CheatBase.h" />
     <ClInclude Include="Sources\Internal\Hacks\Flyhack\Flyhack.h" />
     <ClInclude Include="Sources\Internal\Hacks\GameClasses\VehicleEntity.h" />
     <ClInclude Include="Sources\Internal\Hacks\Teleport\Teleport.h" />
@@ -174,6 +175,7 @@
     <ClCompile Include="Sources\Internal\Classes\Math\Vector3.cpp" />
     <ClCompile Include="Sources\Internal\Classes\Math\Vector4.cpp" />
     <ClCompile Include="Sources\Internal\Hacks\AntiKB\AntiKB.cpp" />
+    <ClCompile Include="Sources\Internal\Hacks\CheatBase.cpp" />
     <ClCompile Include="Sources\Internal\Hacks\Flyhack\Flyhack.cpp" />
     <ClCompile Include="Sources\Internal\Hacks\GameClasses\VehicleEntity.cpp" />
     <ClCompile Include="Sources\Internal\Hacks\Teleport\Teleport.cpp" />

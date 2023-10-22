@@ -19,6 +19,7 @@ void Teleport::TeleportLocation(VehicleEntity* targetEntity, Vector3* targetLoca
 
 void Teleport::TeleportHighestLocation(VehicleEntity* targetEntity)
 {
+	VehicleEntity* playerEntity = GetPlayerEntity();
 	std::vector<VehicleEntity*> allVehiclesEntities = VehiclesCollector::GetAllVehiclesEntities();
 	if (allVehiclesEntities.size() == NULL)
 	{
@@ -55,5 +56,6 @@ void Teleport::TeleportHighestLocation(VehicleEntity* targetEntity)
 
 void Teleport::TeleportPlayerToHighestLocation()
 {
+	VehicleEntity* playerEntity = GetPlayerEntity();
 	TeleportHighestLocation(playerEntity);
 }

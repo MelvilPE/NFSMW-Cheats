@@ -99,6 +99,9 @@
     <ClInclude Include="Sources\Internal\Hacks\AntiKB\AntiKB.h">
       <Filter>Fichiers sources\Sources\Internal\Hacks\AntiKB</Filter>
     </ClInclude>
+    <ClInclude Include="Sources\Internal\Hacks\CheatBase.h">
+      <Filter>Fichiers sources\Sources\Internal\Hacks</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="dllmain.cpp">
@@ -142,6 +145,9 @@
     </ClCompile>
     <ClCompile Include="Sources\Internal\Hacks\AntiKB\AntiKB.cpp">
       <Filter>Fichiers sources\Sources\Internal\Hacks\AntiKB</Filter>
+    </ClCompile>
+    <ClCompile Include="Sources\Internal\Hacks\CheatBase.cpp">
+      <Filter>Fichiers sources\Sources\Internal\Hacks</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

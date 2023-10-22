@@ -21,6 +21,7 @@ void Flyhack::ApplyEffect(VehicleEntity* targetEntity, float flyhackForce)
 
 void Flyhack::ApplyEffectPlayer(float flyhackForce)
 {
+	VehicleEntity* playerEntity = GetPlayerEntity();
 	if (playerEntity == nullptr)
 	{
 		MessageBox(NULL, "Flyhack::ApplyEffectPlayer failed to activate flyhack, playerEntity pointer can't be nullptr!", "NFSMW", 16);
@@ -43,6 +44,7 @@ void Flyhack::ApplyEffectPlayer(float flyhackForce)
 
 void Flyhack::ApplyEffectAllOtherVehicles(float flyhackForce)
 {
+	VehicleEntity* playerEntity = GetPlayerEntity();
 	std::vector<VehicleEntity*> allVehiclesEntities = VehiclesCollector::GetAllVehiclesEntities();
 	if (allVehiclesEntities.size() == NULL)
 	{

@@ -2,17 +2,16 @@
 
 #include "../../Includes.h"
 
+#include "../CheatBase.h"
 #include "../GameClasses/VehicleEntity.h"
 
 #include "../../AppliedHooks/HooksList/VehiclesCollector.h"
 
-class Flyhack
+class Flyhack: public CheatBase
 {
 public:
 	Flyhack()
 	{
-		uintptr_t moduleHandle = reinterpret_cast<uintptr_t>(GetModuleHandle(NULL));
-		this->playerEntity = reinterpret_cast<VehicleEntity*>(moduleHandle + 0x5386C8);
 		this->minimumPositionY = 0.1f;
 		this->maximumPositionY = 350.0f;
 		this->lastPlayerPositionY = NULL;
@@ -26,6 +25,5 @@ public:
 private:
 	float minimumPositionY;
 	float maximumPositionY;
-	VehicleEntity* playerEntity;
 	float lastPlayerPositionY;
 };
