@@ -1,9 +1,9 @@
 #pragma once
 
-#include "../../Includes.h"
+#include "../../../Includes.h"
 
-#include "../CheatBase.h"
-#include "../GameClasses/VehicleEntity.h"
+#include "../CheatsBase.h"
+#include "../../GameClasses/VehicleEntity.h"
 
 #include "../../AppliedHooks/HooksList/VehiclesCollector.h"
 

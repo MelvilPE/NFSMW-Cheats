@@ -145,17 +145,17 @@
   <ItemGroup>
     <ClInclude Include="framework.h" />
     <ClInclude Include="pch.h" />
-    <ClInclude Include="Sources\Internal\AppliedHooks\AppliedHooksRegistrator.h" />
-    <ClInclude Include="Sources\Internal\AppliedHooks\HooksList\VehiclesCollector.h" />
+    <ClInclude Include="Sources\Internal\Cheats\AppliedCheats\AntiKB\AntiKB.h" />
+    <ClInclude Include="Sources\Internal\Cheats\AppliedCheats\CheatsBase.h" />
+    <ClInclude Include="Sources\Internal\Cheats\AppliedCheats\Flyhack\Flyhack.h" />
+    <ClInclude Include="Sources\Internal\Cheats\AppliedCheats\Teleport\Teleport.h" />
+    <ClInclude Include="Sources\Internal\Cheats\AppliedHooks\AppliedHooksRegistrator.h" />
+    <ClInclude Include="Sources\Internal\Cheats\AppliedHooks\HooksList\VehiclesCollector.h" />
+    <ClInclude Include="Sources\Internal\Cheats\GameClasses\VehicleEntity.h" />
     <ClInclude Include="Sources\Internal\Classes\Math\Quaternion.h" />
     <ClInclude Include="Sources\Internal\Classes\Math\Vector2.h" />
     <ClInclude Include="Sources\Internal\Classes\Math\Vector3.h" />
     <ClInclude Include="Sources\Internal\Classes\Math\Vector4.h" />
-    <ClInclude Include="Sources\Internal\Hacks\AntiKB\AntiKB.h" />
-    <ClInclude Include="Sources\Internal\Hacks\CheatBase.h" />
-    <ClInclude Include="Sources\Internal\Hacks\Flyhack\Flyhack.h" />
-    <ClInclude Include="Sources\Internal\Hacks\GameClasses\VehicleEntity.h" />
-    <ClInclude Include="Sources\Internal\Hacks\Teleport\Teleport.h" />
     <ClInclude Include="Sources\Internal\Includes.h" />
     <ClInclude Include="Sources\Internal\Main.h" />
     <ClInclude Include="Sources\Internal\Modules\Hooks\Hooks.h" />
@@ -168,17 +168,17 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
     </ClCompile>
-    <ClCompile Include="Sources\Internal\AppliedHooks\AppliedHooksRegistrator.cpp" />
-    <ClCompile Include="Sources\Internal\AppliedHooks\HooksList\VehiclesCollector.cpp" />
+    <ClCompile Include="Sources\Internal\Cheats\AppliedCheats\AntiKB\AntiKB.cpp" />
+    <ClCompile Include="Sources\Internal\Cheats\AppliedCheats\CheatsBase.cpp" />
+    <ClCompile Include="Sources\Internal\Cheats\AppliedCheats\Flyhack\Flyhack.cpp" />
+    <ClCompile Include="Sources\Internal\Cheats\AppliedCheats\Teleport\Teleport.cpp" />
+    <ClCompile Include="Sources\Internal\Cheats\AppliedHooks\AppliedHooksRegistrator.cpp" />
+    <ClCompile Include="Sources\Internal\Cheats\AppliedHooks\HooksList\VehiclesCollector.cpp" />
+    <ClCompile Include="Sources\Internal\Cheats\GameClasses\VehicleEntity.cpp" />
     <ClCompile Include="Sources\Internal\Classes\Math\Quaternion.cpp" />
     <ClCompile Include="Sources\Internal\Classes\Math\Vector2.cpp" />
     <ClCompile Include="Sources\Internal\Classes\Math\Vector3.cpp" />
     <ClCompile Include="Sources\Internal\Classes\Math\Vector4.cpp" />
-    <ClCompile Include="Sources\Internal\Hacks\AntiKB\AntiKB.cpp" />
-    <ClCompile Include="Sources\Internal\Hacks\CheatBase.cpp" />
-    <ClCompile Include="Sources\Internal\Hacks\Flyhack\Flyhack.cpp" />
-    <ClCompile Include="Sources\Internal\Hacks\GameClasses\VehicleEntity.cpp" />
-    <ClCompile Include="Sources\Internal\Hacks\Teleport\Teleport.cpp" />
     <ClCompile Include="Sources\Internal\Main.cpp" />
     <ClCompile Include="Sources\Internal\Modules\Hooks\Hooks.cpp" />
   </ItemGroup>

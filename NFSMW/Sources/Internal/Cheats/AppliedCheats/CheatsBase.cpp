@@ -1,4 +1,4 @@
-#include "CheatBase.h"
+#include "CheatsBase.h"
 
 uintptr_t CheatBase::GetModuleHandleAlias()
 {

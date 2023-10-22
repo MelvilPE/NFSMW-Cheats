@@ -1,10 +1,10 @@
 #pragma once
 #include "Includes.h"
 
-#include "AppliedHooks/AppliedHooksRegistrator.h"
-#include "Hacks/Flyhack/Flyhack.h"
-#include "Hacks/Teleport/Teleport.h"
-#include "Hacks/AntiKB/AntiKB.h"
+#include "Cheats/AppliedHooks/AppliedHooksRegistrator.h"
+#include "Cheats/AppliedCheats/Flyhack/Flyhack.h"
+#include "Cheats/AppliedCheats/Teleport/Teleport.h"
+#include "Cheats/AppliedCheats/AntiKB/AntiKB.h"
 
 class Main
 {

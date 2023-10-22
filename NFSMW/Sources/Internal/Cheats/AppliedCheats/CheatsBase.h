@@ -1,8 +1,8 @@
 #pragma once
 
-#include "../Includes.h"
+#include "../../Includes.h"
 
-#include "GameClasses/VehicleEntity.h"
+#include "../GameClasses/VehicleEntity.h"
 
 class CheatBase
 {

@@ -19,23 +19,11 @@
     <Filter Include="Fichiers sources\Sources\Internal">
       <UniqueIdentifier>{63b78504-1152-421a-b275-4767e73fb27c}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Fichiers sources\Sources\Internal\Hacks">
-      <UniqueIdentifier>{5bbb60cf-d2c2-4a1c-a8dc-40d02c9cc3f8}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Fichiers sources\Sources\Internal\Modules">
       <UniqueIdentifier>{90b80c4e-c22d-4143-89e5-b6667f188e2b}</UniqueIdentifier>
     </Filter>
     <Filter Include="Fichiers sources\Sources\Internal\Modules\Hooks">
       <UniqueIdentifier>{ad4a2d74-16cf-49b9-8434-748d70fea14d}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Fichiers sources\Sources\Internal\Hacks\Flyhack">
-      <UniqueIdentifier>{273e6bc4-d146-4277-9907-870ef1263cbd}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Fichiers sources\Sources\Internal\AppliedHooks">
-      <UniqueIdentifier>{8bac1ee0-3a08-48d5-8166-905d952e6d58}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Fichiers sources\Sources\Internal\AppliedHooks\HooksList">
-      <UniqueIdentifier>{572031aa-bcdf-437a-bf20-5d102c19d86a}</UniqueIdentifier>
     </Filter>
     <Filter Include="Fichiers sources\Sources\Internal\Classes">
       <UniqueIdentifier>{264119ed-941a-4828-9071-53c6fe967baa}</UniqueIdentifier>
@@ -43,14 +31,29 @@
     <Filter Include="Fichiers sources\Sources\Internal\Classes\Math">
       <UniqueIdentifier>{b31d0e70-d0ba-4867-b415-23ae229bda36}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Fichiers sources\Sources\Internal\Hacks\Teleport">
-      <UniqueIdentifier>{0b11e197-90b1-41ee-baa0-f7f94e465f41}</UniqueIdentifier>
+    <Filter Include="Fichiers sources\Sources\Internal\Cheats">
+      <UniqueIdentifier>{5bbb60cf-d2c2-4a1c-a8dc-40d02c9cc3f8}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Fichiers sources\Sources\Internal\Hacks\GameClasses">
+    <Filter Include="Fichiers sources\Sources\Internal\Cheats\GameClasses">
       <UniqueIdentifier>{2fe23155-c1ec-4f50-b9fc-45704b6fd4c5}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Fichiers sources\Sources\Internal\Hacks\AntiKB">
-      <UniqueIdentifier>{a8f77aaf-455f-4eea-a8ea-fbfa275e835b}</UniqueIdentifier>
+    <Filter Include="Fichiers sources\Sources\Internal\Cheats\AppliedCheats">
+      <UniqueIdentifier>{aaabded1-41eb-4919-8297-c1cdf61a078b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Fichiers sources\Sources\Internal\Cheats\AppliedCheats\AntiKB">
+      <UniqueIdentifier>{a02c3993-4a66-43b7-bdf1-8b44e429cda2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Fichiers sources\Sources\Internal\Cheats\AppliedCheats\Flyhack">
+      <UniqueIdentifier>{e302bb39-23d4-4c85-b8ad-b707f23de782}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Fichiers sources\Sources\Internal\Cheats\AppliedCheats\Teleport">
+      <UniqueIdentifier>{398d45f4-4562-48ff-b9e0-c20cafc97da1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Fichiers sources\Sources\Internal\Cheats\AppliedHooks">
+      <UniqueIdentifier>{c6267e8f-dd4d-423e-8391-68a8ff1b8f81}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Fichiers sources\Sources\Internal\Cheats\AppliedHooks\HooksList">
+      <UniqueIdentifier>{2f739b18-818f-460b-a523-cc2cba73d635}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -63,26 +66,14 @@
     <ClInclude Include="Sources\Internal\Modules\Hooks\Hooks.h">
       <Filter>Fichiers sources\Sources\Internal\Modules\Hooks</Filter>
     </ClInclude>
-    <ClInclude Include="Sources\Internal\Hacks\Flyhack\Flyhack.h">
-      <Filter>Fichiers sources\Sources\Internal\Hacks\Flyhack</Filter>
-    </ClInclude>
     <ClInclude Include="Sources\Internal\Includes.h">
       <Filter>Fichiers sources\Sources\Internal</Filter>
     </ClInclude>
     <ClInclude Include="Sources\Internal\Main.h">
       <Filter>Fichiers sources\Sources\Internal</Filter>
     </ClInclude>
-    <ClInclude Include="Sources\Internal\AppliedHooks\HooksList\VehiclesCollector.h">
-      <Filter>Fichiers sources\Sources\Internal\AppliedHooks\HooksList</Filter>
-    </ClInclude>
-    <ClInclude Include="Sources\Internal\AppliedHooks\AppliedHooksRegistrator.h">
-      <Filter>Fichiers sources\Sources\Internal\AppliedHooks</Filter>
-    </ClInclude>
     <ClInclude Include="Sources\Internal\Classes\Math\Vector3.h">
       <Filter>Fichiers sources\Sources\Internal\Classes\Math</Filter>
-    </ClInclude>
-    <ClInclude Include="Sources\Internal\Hacks\Teleport\Teleport.h">
-      <Filter>Fichiers sources\Sources\Internal\Hacks\Teleport</Filter>
     </ClInclude>
     <ClInclude Include="Sources\Internal\Classes\Math\Vector4.h">
       <Filter>Fichiers sources\Sources\Internal\Classes\Math</Filter>
@@ -93,14 +84,26 @@
     <ClInclude Include="Sources\Internal\Classes\Math\Vector2.h">
       <Filter>Fichiers sources\Sources\Internal\Classes\Math</Filter>
     </ClInclude>
-    <ClInclude Include="Sources\Internal\Hacks\GameClasses\VehicleEntity.h">
-      <Filter>Fichiers sources\Sources\Internal\Hacks\GameClasses</Filter>
+    <ClInclude Include="Sources\Internal\Cheats\GameClasses\VehicleEntity.h">
+      <Filter>Fichiers sources\Sources\Internal\Cheats\GameClasses</Filter>
     </ClInclude>
-    <ClInclude Include="Sources\Internal\Hacks\AntiKB\AntiKB.h">
-      <Filter>Fichiers sources\Sources\Internal\Hacks\AntiKB</Filter>
+    <ClInclude Include="Sources\Internal\Cheats\AppliedCheats\Teleport\Teleport.h">
+      <Filter>Fichiers sources\Sources\Internal\Cheats\AppliedCheats\Teleport</Filter>
     </ClInclude>
-    <ClInclude Include="Sources\Internal\Hacks\CheatBase.h">
-      <Filter>Fichiers sources\Sources\Internal\Hacks</Filter>
+    <ClInclude Include="Sources\Internal\Cheats\AppliedCheats\Flyhack\Flyhack.h">
+      <Filter>Fichiers sources\Sources\Internal\Cheats\AppliedCheats\Flyhack</Filter>
+    </ClInclude>
+    <ClInclude Include="Sources\Internal\Cheats\AppliedCheats\AntiKB\AntiKB.h">
+      <Filter>Fichiers sources\Sources\Internal\Cheats\AppliedCheats\AntiKB</Filter>
+    </ClInclude>
+    <ClInclude Include="Sources\Internal\Cheats\AppliedCheats\CheatsBase.h">
+      <Filter>Fichiers sources\Sources\Internal\Cheats\AppliedCheats</Filter>
+    </ClInclude>
+    <ClInclude Include="Sources\Internal\Cheats\AppliedHooks\AppliedHooksRegistrator.h">
+      <Filter>Fichiers sources\Sources\Internal\Cheats\AppliedHooks</Filter>
+    </ClInclude>
+    <ClInclude Include="Sources\Internal\Cheats\AppliedHooks\HooksList\VehiclesCollector.h">
+      <Filter>Fichiers sources\Sources\Internal\Cheats\AppliedHooks\HooksList</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -113,23 +116,11 @@
     <ClCompile Include="Sources\Internal\Modules\Hooks\Hooks.cpp">
       <Filter>Fichiers sources\Sources\Internal\Modules\Hooks</Filter>
     </ClCompile>
-    <ClCompile Include="Sources\Internal\Hacks\Flyhack\Flyhack.cpp">
-      <Filter>Fichiers sources\Sources\Internal\Hacks\Flyhack</Filter>
-    </ClCompile>
     <ClCompile Include="Sources\Internal\Main.cpp">
       <Filter>Fichiers sources\Sources\Internal</Filter>
     </ClCompile>
-    <ClCompile Include="Sources\Internal\AppliedHooks\HooksList\VehiclesCollector.cpp">
-      <Filter>Fichiers sources\Sources\Internal\AppliedHooks\HooksList</Filter>
-    </ClCompile>
-    <ClCompile Include="Sources\Internal\AppliedHooks\AppliedHooksRegistrator.cpp">
-      <Filter>Fichiers sources\Sources\Internal\AppliedHooks</Filter>
-    </ClCompile>
     <ClCompile Include="Sources\Internal\Classes\Math\Vector3.cpp">
       <Filter>Fichiers sources\Sources\Internal\Classes\Math</Filter>
-    </ClCompile>
-    <ClCompile Include="Sources\Internal\Hacks\Teleport\Teleport.cpp">
-      <Filter>Fichiers sources\Sources\Internal\Hacks\Teleport</Filter>
     </ClCompile>
     <ClCompile Include="Sources\Internal\Classes\Math\Vector4.cpp">
       <Filter>Fichiers sources\Sources\Internal\Classes\Math</Filter>
@@ -140,14 +131,26 @@
     <ClCompile Include="Sources\Internal\Classes\Math\Vector2.cpp">
       <Filter>Fichiers sources\Sources\Internal\Classes\Math</Filter>
     </ClCompile>
-    <ClCompile Include="Sources\Internal\Hacks\GameClasses\VehicleEntity.cpp">
-      <Filter>Fichiers sources\Sources\Internal\Hacks\GameClasses</Filter>
+    <ClCompile Include="Sources\Internal\Cheats\GameClasses\VehicleEntity.cpp">
+      <Filter>Fichiers sources\Sources\Internal\Cheats\GameClasses</Filter>
     </ClCompile>
-    <ClCompile Include="Sources\Internal\Hacks\AntiKB\AntiKB.cpp">
-      <Filter>Fichiers sources\Sources\Internal\Hacks\AntiKB</Filter>
+    <ClCompile Include="Sources\Internal\Cheats\AppliedCheats\Teleport\Teleport.cpp">
+      <Filter>Fichiers sources\Sources\Internal\Cheats\AppliedCheats\Teleport</Filter>
     </ClCompile>
-    <ClCompile Include="Sources\Internal\Hacks\CheatBase.cpp">
-      <Filter>Fichiers sources\Sources\Internal\Hacks</Filter>
+    <ClCompile Include="Sources\Internal\Cheats\AppliedCheats\Flyhack\Flyhack.cpp">
+      <Filter>Fichiers sources\Sources\Internal\Cheats\AppliedCheats\Flyhack</Filter>
+    </ClCompile>
+    <ClCompile Include="Sources\Internal\Cheats\AppliedCheats\AntiKB\AntiKB.cpp">
+      <Filter>Fichiers sources\Sources\Internal\Cheats\AppliedCheats\AntiKB</Filter>
+    </ClCompile>
+    <ClCompile Include="Sources\Internal\Cheats\AppliedCheats\CheatsBase.cpp">
+      <Filter>Fichiers sources\Sources\Internal\Cheats\AppliedCheats</Filter>
+    </ClCompile>
+    <ClCompile Include="Sources\Internal\Cheats\AppliedHooks\AppliedHooksRegistrator.cpp">
+      <Filter>Fichiers sources\Sources\Internal\Cheats\AppliedHooks</Filter>
+    </ClCompile>
+    <ClCompile Include="Sources\Internal\Cheats\AppliedHooks\HooksList\VehiclesCollector.cpp">
+      <Filter>Fichiers sources\Sources\Internal\Cheats\AppliedHooks\HooksList</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

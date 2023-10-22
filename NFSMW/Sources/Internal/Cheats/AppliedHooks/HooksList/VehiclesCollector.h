@@ -1,9 +1,9 @@
 #pragma once
-#include "../../Includes.h"
+#include "../../../Includes.h"
 
-#include "../../Hacks/GameClasses/VehicleEntity.h"
+#include "../../../Cheats/GameClasses/VehicleEntity.h"
 
-#include "../../Modules/Hooks/Hooks.h"
+#include "../../../Modules/Hooks/Hooks.h"
 
 class VehiclesCollector 
 {
