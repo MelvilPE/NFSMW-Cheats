@@ -7,11 +7,14 @@ void Main::Run()
     Flyhack flyhack = Flyhack();
     Teleport teleport = Teleport();
     AntiKB antiKB = AntiKB();
+    Boost boost = Boost();
+
     while (true)
     {
         FlyhackBlock(&flyhack);
         TeleportBlock(&teleport);
         AntiKBBlock(&antiKB);
+        BoostBlock(&boost);
 
         Sleep(30);
     }
@@ -52,5 +55,14 @@ void Main::AntiKBBlock(AntiKB* antiKB)
     if (GetAsyncKeyState(VK_J))
     {
         antiKB->EnableOrDisable();
+    }
+}
+
+void Main::BoostBlock(Boost* boost)
+{
+    int VK_S = 0x53;
+    if (GetAsyncKeyState(VK_S))
+    {
+        boost->ApplyEffectPlayer();
     }
 }

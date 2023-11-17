@@ -146,6 +146,7 @@
     <ClInclude Include="framework.h" />
     <ClInclude Include="pch.h" />
     <ClInclude Include="Sources\Internal\Cheats\AppliedCheats\AntiKB\AntiKB.h" />
+    <ClInclude Include="Sources\Internal\Cheats\AppliedCheats\Boost\Boost.h" />
     <ClInclude Include="Sources\Internal\Cheats\AppliedCheats\CheatsBase.h" />
     <ClInclude Include="Sources\Internal\Cheats\AppliedCheats\Flyhack\Flyhack.h" />
     <ClInclude Include="Sources\Internal\Cheats\AppliedCheats\Teleport\Teleport.h" />
@@ -169,6 +170,7 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
     </ClCompile>
     <ClCompile Include="Sources\Internal\Cheats\AppliedCheats\AntiKB\AntiKB.cpp" />
+    <ClCompile Include="Sources\Internal\Cheats\AppliedCheats\Boost\Boost.cpp" />
     <ClCompile Include="Sources\Internal\Cheats\AppliedCheats\CheatsBase.cpp" />
     <ClCompile Include="Sources\Internal\Cheats\AppliedCheats\Flyhack\Flyhack.cpp" />
     <ClCompile Include="Sources\Internal\Cheats\AppliedCheats\Teleport\Teleport.cpp" />

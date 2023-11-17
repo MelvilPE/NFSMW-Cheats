@@ -55,6 +55,9 @@
     <Filter Include="Fichiers sources\Sources\Internal\Cheats\AppliedHooks\HooksList">
       <UniqueIdentifier>{2f739b18-818f-460b-a523-cc2cba73d635}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Fichiers sources\Sources\Internal\Cheats\AppliedCheats\Boost">
+      <UniqueIdentifier>{49105e92-8b09-4e16-a890-7b8453daf7f4}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="framework.h">
@@ -105,6 +108,9 @@
     <ClInclude Include="Sources\Internal\Cheats\AppliedHooks\HooksList\VehiclesCollector.h">
       <Filter>Fichiers sources\Sources\Internal\Cheats\AppliedHooks\HooksList</Filter>
     </ClInclude>
+    <ClInclude Include="Sources\Internal\Cheats\AppliedCheats\Boost\Boost.h">
+      <Filter>Fichiers sources\Sources\Internal\Cheats\AppliedCheats\Boost</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="dllmain.cpp">
@@ -151,6 +157,9 @@
     </ClCompile>
     <ClCompile Include="Sources\Internal\Cheats\AppliedHooks\HooksList\VehiclesCollector.cpp">
       <Filter>Fichiers sources\Sources\Internal\Cheats\AppliedHooks\HooksList</Filter>
+    </ClCompile>
+    <ClCompile Include="Sources\Internal\Cheats\AppliedCheats\Boost\Boost.cpp">
+      <Filter>Fichiers sources\Sources\Internal\Cheats\AppliedCheats\Boost</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
