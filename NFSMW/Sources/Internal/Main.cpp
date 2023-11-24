@@ -8,6 +8,7 @@ void Main::Run()
     Teleport teleport = Teleport();
     AntiKB antiKB = AntiKB();
     Boost boost = Boost();
+    Wheeling wheeling = Wheeling();
 
     while (true)
     {
@@ -15,6 +16,7 @@ void Main::Run()
         TeleportBlock(&teleport);
         AntiKBBlock(&antiKB);
         BoostBlock(&boost);
+        WheelingBlock(&wheeling);
 
         Sleep(30);
     }
@@ -63,6 +65,15 @@ void Main::BoostBlock(Boost* boost)
     int VK_S = 0x53;
     if (GetAsyncKeyState(VK_S))
     {
-        boost->ApplyEffectPlayer();
+        boost->ApplyEffectPlayer(2.0f);
+    }
+}
+
+void Main::WheelingBlock(Wheeling* wheeling)
+{
+    int VK_W = 0x57;
+    if (GetAsyncKeyState(VK_W))
+    {
+        wheeling->ApplyEffectPlayer();
     }
 }

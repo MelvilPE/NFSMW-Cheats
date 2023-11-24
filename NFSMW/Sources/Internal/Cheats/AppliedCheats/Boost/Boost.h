@@ -10,5 +10,5 @@
 class Boost : public CheatBase
 {
 public:
-	void ApplyEffectPlayer();
+	void ApplyEffectPlayer(float boostForce);
 };

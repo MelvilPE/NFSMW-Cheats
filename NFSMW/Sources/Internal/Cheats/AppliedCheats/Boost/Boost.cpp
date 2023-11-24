@@ -1,6 +1,6 @@
 #include "Boost.h"
 
-void Boost::ApplyEffectPlayer()
+void Boost::ApplyEffectPlayer(float boostForce)
 {
 	VehicleEntity* playerEntity = GetPlayerEntity();
 	if (playerEntity == nullptr)
@@ -19,9 +19,9 @@ void Boost::ApplyEffectPlayer()
 		return;
 	}
 
-	playerAppliedForces.SetAxisX(playerAppliedForces.GetAxisX() * 10);
-	playerAppliedForces.SetAxisY(playerAppliedForces.GetAxisY() * 10);
-	playerAppliedForces.SetAxisZ(playerAppliedForces.GetAxisZ() * 10);
+	playerAppliedForces.SetAxisX(playerAppliedForces.GetAxisX() * boostForce);
+	playerAppliedForces.SetAxisY(playerAppliedForces.GetAxisY() * boostForce);
+	playerAppliedForces.SetAxisZ(playerAppliedForces.GetAxisZ() * boostForce);
 
 	playerEntity->SetAppliedForces(playerAppliedForces);
 

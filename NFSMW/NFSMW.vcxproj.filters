@@ -58,6 +58,9 @@
     <Filter Include="Fichiers sources\Sources\Internal\Cheats\AppliedCheats\Boost">
       <UniqueIdentifier>{49105e92-8b09-4e16-a890-7b8453daf7f4}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Fichiers sources\Sources\Internal\Cheats\AppliedCheats\Wheeling">
+      <UniqueIdentifier>{ea877c2b-dd4a-48d6-bada-55388c653ad8}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="framework.h">
@@ -111,6 +114,9 @@
     <ClInclude Include="Sources\Internal\Cheats\AppliedCheats\Boost\Boost.h">
       <Filter>Fichiers sources\Sources\Internal\Cheats\AppliedCheats\Boost</Filter>
     </ClInclude>
+    <ClInclude Include="Sources\Internal\Cheats\AppliedCheats\Wheeling\Wheeling.h">
+      <Filter>Fichiers sources\Sources\Internal\Cheats\AppliedCheats\Wheeling</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="dllmain.cpp">
@@ -160,6 +166,9 @@
     </ClCompile>
     <ClCompile Include="Sources\Internal\Cheats\AppliedCheats\Boost\Boost.cpp">
       <Filter>Fichiers sources\Sources\Internal\Cheats\AppliedCheats\Boost</Filter>
+    </ClCompile>
+    <ClCompile Include="Sources\Internal\Cheats\AppliedCheats\Wheeling\Wheeling.cpp">
+      <Filter>Fichiers sources\Sources\Internal\Cheats\AppliedCheats\Wheeling</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
