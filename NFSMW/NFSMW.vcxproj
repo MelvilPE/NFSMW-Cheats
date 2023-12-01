@@ -154,6 +154,9 @@
     <ClInclude Include="Sources\Internal\Cheats\AppliedHooks\AppliedHooksRegistrator.h" />
     <ClInclude Include="Sources\Internal\Cheats\AppliedHooks\HooksList\VehiclesCollector.h" />
     <ClInclude Include="Sources\Internal\Cheats\GameClasses\VehicleEntity.h" />
+    <ClInclude Include="Sources\Internal\Classes\Math\Matrix2.h" />
+    <ClInclude Include="Sources\Internal\Classes\Math\Matrix3.h" />
+    <ClInclude Include="Sources\Internal\Classes\Math\Matrix4.h" />
     <ClInclude Include="Sources\Internal\Classes\Math\Quaternion.h" />
     <ClInclude Include="Sources\Internal\Classes\Math\Vector2.h" />
     <ClInclude Include="Sources\Internal\Classes\Math\Vector3.h" />
@@ -179,6 +182,9 @@
     <ClCompile Include="Sources\Internal\Cheats\AppliedHooks\AppliedHooksRegistrator.cpp" />
     <ClCompile Include="Sources\Internal\Cheats\AppliedHooks\HooksList\VehiclesCollector.cpp" />
     <ClCompile Include="Sources\Internal\Cheats\GameClasses\VehicleEntity.cpp" />
+    <ClCompile Include="Sources\Internal\Classes\Math\Matrix2.cpp" />
+    <ClCompile Include="Sources\Internal\Classes\Math\Matrix3.cpp" />
+    <ClCompile Include="Sources\Internal\Classes\Math\Matrix4.cpp" />
     <ClCompile Include="Sources\Internal\Classes\Math\Quaternion.cpp" />
     <ClCompile Include="Sources\Internal\Classes\Math\Vector2.cpp" />
     <ClCompile Include="Sources\Internal\Classes\Math\Vector3.cpp" />

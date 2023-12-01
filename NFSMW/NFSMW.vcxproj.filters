@@ -117,6 +117,15 @@
     <ClInclude Include="Sources\Internal\Cheats\AppliedCheats\Wheeling\Wheeling.h">
       <Filter>Fichiers sources\Sources\Internal\Cheats\AppliedCheats\Wheeling</Filter>
     </ClInclude>
+    <ClInclude Include="Sources\Internal\Classes\Math\Matrix2.h">
+      <Filter>Fichiers sources\Sources\Internal\Classes\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="Sources\Internal\Classes\Math\Matrix3.h">
+      <Filter>Fichiers sources\Sources\Internal\Classes\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="Sources\Internal\Classes\Math\Matrix4.h">
+      <Filter>Fichiers sources\Sources\Internal\Classes\Math</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="dllmain.cpp">
@@ -169,6 +178,15 @@
     </ClCompile>
     <ClCompile Include="Sources\Internal\Cheats\AppliedCheats\Wheeling\Wheeling.cpp">
       <Filter>Fichiers sources\Sources\Internal\Cheats\AppliedCheats\Wheeling</Filter>
+    </ClCompile>
+    <ClCompile Include="Sources\Internal\Classes\Math\Matrix2.cpp">
+      <Filter>Fichiers sources\Sources\Internal\Classes\Math</Filter>
+    </ClCompile>
+    <ClCompile Include="Sources\Internal\Classes\Math\Matrix3.cpp">
+      <Filter>Fichiers sources\Sources\Internal\Classes\Math</Filter>
+    </ClCompile>
+    <ClCompile Include="Sources\Internal\Classes\Math\Matrix4.cpp">
+      <Filter>Fichiers sources\Sources\Internal\Classes\Math</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

@@ -1,28 +1,45 @@
 #pragma once
 
 #include "../../Includes.h"
-#include "Vector3.h"
 
-class Vector4 : public Vector3
+class Vector4
 {
 public:
 	/* Constructors */
-	Vector4() : Vector3()
+	Vector4()
 	{
-		this->time = 0.0f;
+		this->x = 0.0f;
+		this->y = 0.0f;
+		this->z = 0.0f;
+		this->w = 0.0f;
 	}
 
-	Vector4(float x, float y, float z, float time) : Vector3(x, y, z)
+	Vector4(float x, float y, float z, float w)
 	{
-		this->time = time;
+		this->x = x;
+		this->y = y;
+		this->z = z;
+		this->w = w;
 	}
 
 	/* Getters */
-	float GetTime();
+	float GetAxisX();
+	float GetAxisY();
+	float GetAxisZ();
+	float GetAxisW();
 
 	/* Setters */
-	void SetTime(float time);
+	void SetAxisX(float x);
+	void SetAxisY(float y);
+	void SetAxisZ(float z);
+	void SetAxisW(float w);
+	void SetAxisXYZW(float x, float y, float z, float w);
+	void SetAxisXYZW(Vector4 xyzw);
 
+	bool HasSameValues(float x, float y, float z, float w);
 private:
-	float time;
+	float x;
+	float y;
+	float z;
+	float w;
 };
