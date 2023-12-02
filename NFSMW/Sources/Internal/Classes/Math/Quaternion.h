@@ -9,31 +9,44 @@ public:
 	/* Constructors */
 	Quaternion()
 	{
-		this->rotationAxis = 0.0f;
-		this->xyz = Vector3();
+		this->x = 0.0f;
+		this->y = 0.0f;
+		this->z = 0.0f;
+		this->w = 0.0f;
 	}
 
-	Quaternion(float rotationAxis, float x, float y, float z)
+	Quaternion(float x, float y, float z, float w)
 	{
-		this->rotationAxis = rotationAxis;
-		this->xyz = Vector3(x, y, z);
-	}
-
-	Quaternion(float rotationAxis, Vector3 xyz)
-	{
-		this->rotationAxis = rotationAxis;
-		this->xyz = xyz;
+		this->x = x;
+		this->y = y;
+		this->z = z;
+		this->w = w;
 	}
 
 	/* Getters */
-	float GetRotationAxis();
-	Vector3 GetAxisXYZ();
+	float GetAxisX();
+	float GetAxisY();
+	float GetAxisZ();
+	float GetAxisW();
 
 	/* Setters */
-	void SetRotationAxis(float rotationAxis);
-	void SetAxisXYZ(Vector3 xyz);
+	void SetAxisX(float x);
+	void SetAxisY(float y);
+	void SetAxisZ(float z);
+	void SetAxisW(float w);
+	void SetAxisXYZW(float x, float y, float z, float w);
+	void SetAxisXYZW(Quaternion xyzw);
 
+	bool HasSameValues(float x, float y, float z, float w);
+
+	/* Extra calculations */
+	void Normalize();
+	
+	static Quaternion MultiplyQuaternions(Quaternion q1, Quaternion q2);
+	static Quaternion AxisAngleToQuaternion(float angle, Vector3 xyz);
 private:
-	float rotationAxis;
-	Vector3 xyz;
+	float x;
+	float y;
+	float z;
+	float w;
 };
