@@ -126,6 +126,9 @@
     <ClInclude Include="Sources\Internal\Classes\Math\Matrix4.h">
       <Filter>Fichiers sources\Sources\Internal\Classes\Math</Filter>
     </ClInclude>
+    <ClInclude Include="Sources\Internal\GlobalConsts.h">
+      <Filter>Fichiers sources\Sources\Internal</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="dllmain.cpp">

@@ -161,6 +161,7 @@
     <ClInclude Include="Sources\Internal\Classes\Math\Vector2.h" />
     <ClInclude Include="Sources\Internal\Classes\Math\Vector3.h" />
     <ClInclude Include="Sources\Internal\Classes\Math\Vector4.h" />
+    <ClInclude Include="Sources\Internal\GlobalConsts.h" />
     <ClInclude Include="Sources\Internal\Includes.h" />
     <ClInclude Include="Sources\Internal\Main.h" />
     <ClInclude Include="Sources\Internal\Modules\Hooks\Hooks.h" />
